@@ -1,0 +1,82 @@
+{% load static %}
+
+
+<!--Navbar-->
+
+    <footer class="ftco-footer ftco-section img">
+    	<div class="overlay"></div>
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-4">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">About Us</h2>
+              <p>We are Nawaazish crew - a group of college students from different realms of life, on a mission to contribute to a society of equal opportunities, an environment one and all.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate Social"><a href="{% static 'https://twitter.com/NawaazishCrew' %}" target="_blank"><span class="icon-twitter "></span></a></li>
+                <li class="ftco-animate Social"><a href="{% static 'https://www.facebook.com/Nawaazish-Crew-107099397604923/' %}" target="_blank"><span class="icon-facebook "></span></a></li>
+                <li class="ftco-animate Social"><a href="{% static 'https://www.instagram.com/nawaazish.crew/' %}" target="_blank"><span class="icon-instagram "></span></a></li>
+                <li class="ftco-animate Social"><a href="{% static 'https://www.youtube.com/channel/UCRYRzx9eX4enktHapkhSy6Q' %}" target="_blank"><span class="icon-youtube "></span></a></li>
+                <li class="ftco-animate Social"><a href="{% static 'https://www.linkedin.com/company/nawaazish-crew' %}" target="_blank"><span class="icon-linkedin"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <!--<div class="col-md-4">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Recent Blog</h2>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>-->
+          <div class="col-md-4">
+             <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Site Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="{% url 'join_us' %}" class="py-2 d-block">Home</a></li>
+                <li><a href="{% url 'about' %}" class="py-2 d-block">About</a></li>
+                <li><a href="{% url 'donate' %}" class="py-2 d-block">Donate</a></li>
+                <li><a href="{% url 'event' %}" class="py-2 d-block">Events</a></li>
+                <li><a href="{% url 'crew' %}" class="py-2 d-block">Meet The Crew</a></li>
+               <!-- <li><a href="blog.html" class="py-2 d-block">Blog</a></li>-->
+               </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="ftco-footer-widget mb-4">
+          <h2 class="ftco-heading-2">Contact Us</h2>
+          <div class="block-23 mb-3">
+            <ul>
+              <li><a href="{% static 'tel://+91-8800202773' %}"><span class="icon icon-phone"></span><span class="text">+91-8800202773</span></a></li>
+              <li><a href="{% static 'mailto:nawaazishcrew@gmail.com' %}"><span class="icon icon-envelope"></span><span class="text">nawaazish.crew@gmail.com</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+       <p>Copyright <script>document.write(new Date().getFullYear())</script> All rights reserved | <a href="#" target="_blank">Nawaazish</a>
+       </p>
+      </div>
+    </div>
+  </div>
+    <!-- END nav -->

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+  <head>
+    <title>Nawaazish</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <div class="modal fade" id="joinUsModal" tabindex="-1" role="dialog" aria-labelledby="joinUsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modalphone" role="document" style="max-width: 50%; font-family: Helvetica">
+      <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button> -->
+      <div class="modal-content" style="">
+
+          <div class="modal-body" style="padding: 0px">
+              <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12" style="padding: 0px">
+                      <img src="{% static 'images/joinmodal.jpg' %}" class="modalimg" height="472px" style="max-width: 100%; margin: 0px" alt="">
+                    </div>
+                    <div class="col-lg-8 col-md-12" style="text-align: center; background-color: ">
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span style="color: #000">&times;</span></button>
+                      <h2 style="color: #079b78"><b>Be a Volunteer</b></h2>
+                      <span class="form-group" >
+                          <form method="post" >
+                              {% csrf_token %}
+                                  {{form.name}}
+                                  {{form.city}}
+                                  {{form.area}}
+                                  {{form.pincode}}
+                                  {{form.phone}}
+                                  {{form.email}}
+                                  {{form.insta}}
+                            <br>
+                            <input type="submit" name="" class="btn btn-outline-dark btn-md btn-block" id="joinUsButton" value="Join Us"/>
+                            <br>
+                            </form>
+
+                      </span>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  {% include 'joinUsModal.html' %}
+  <body>
+
+<!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="{% static 'index.html' %}"><img src="{% static './images/logo.png' %}" height="55px" style="margin-bottom: 5px"> Nawaazish Crew</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="{% url 'join_us' %}" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="{% url 'donate' %}" class="nav-link">Donate</a></li>
+          <li class="nav-item"><a href="{% url 'gallery' %}" class="nav-link">Gallery</a></li>
+          <li class="nav-item active"><a href="{% url 'event' %}" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="{% url 'contact_us' %}" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="{% url 'crew' %}" class="nav-link">Meet The Crew</a></li>
+          <li class="nav-item"> <button type="button" class="btn btn-info" data-toggle="modal" data-target="#joinUsModal">Join Us</button></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <!-- END nav -->
+
+
+
+
+
+    <div class="hero-wrap" style="background-image: url({% static 'images/bg_1.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+             <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="{% url 'join_us' %}">Home</a></span> <span>Event</span></p>
+            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Events</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!--    <section class="ftco-section">-->
+<!--      <div class="container">-->
+<!--        <div class="row">-->
+<!--        	<div class="col-md-4 d-flex ftco-animate">-->
+<!--          	<div class="blog-entry align-self-stretch">-->
+<!--              <a href="blog-single.html" class="block-20" style="background-image: url('images/event-1.jpg');">-->
+<!--              </a>-->
+<!--              <div class="text p-4 d-block">-->
+<!--              	<div class="meta mb-3">-->
+<!--                  <div><a href="#">Sep. 10, 2018</a></div>-->
+<!--                  <div><a href="#">Admin</a></div>-->
+<!--                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>-->
+<!--                </div>-->
+<!--                <h3 class="heading mb-4"><a href="#">World Wide Donation</a></h3>-->
+<!--                <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="icon-map-o"></i> Venue Main Campus</span></p>-->
+<!--                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>-->
+<!--                <p><a href="event.html">Join Event <i class="ion-ios-arrow-forward"></i></a></p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col-md-4 d-flex ftco-animate">-->
+<!--          	<div class="blog-entry align-self-stretch">-->
+<!--              <a href="blog-single.html" class="block-20" style="background-image: url('images/event-2.jpg');">-->
+<!--              </a>-->
+<!--              <div class="text p-4 d-block">-->
+<!--              	<div class="meta mb-3">-->
+<!--                  <div><a href="#">Sep. 10, 2018</a></div>-->
+<!--                  <div><a href="#">Admin</a></div>-->
+<!--                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>-->
+<!--                </div>-->
+<!--                <h3 class="heading mb-4"><a href="#">World Wide Donation</a></h3>-->
+<!--                <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="icon-map-o"></i> Venue Main Campus</span></p>-->
+<!--                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>-->
+<!--                <p><a href="event.html">Join Event <i class="ion-ios-arrow-forward"></i></a></p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col-md-4 d-flex ftco-animate">-->
+<!--          	<div class="blog-entry align-self-stretch">-->
+<!--              <a href="blog-single.html" class="block-20" style="background-image: url('images/event-3.jpg');">-->
+<!--              </a>-->
+<!--              <div class="text p-4 d-block">-->
+<!--              	<div class="meta mb-3">-->
+<!--                  <div><a href="#">Sep. 10, 2018</a></div>-->
+<!--                  <div><a href="#">Admin</a></div>-->
+<!--                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>-->
+<!--                </div>-->
+<!--                <h3 class="heading mb-4"><a href="#">World Wide Donation</a></h3>-->
+<!--                <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="icon-map-o"></i> Venue Main Campus</span></p>-->
+<!--                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>-->
+<!--                <p><a href="event.html">Join Event <i class="ion-ios-arrow-forward"></i></a></p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col-md-4 d-flex ftco-animate">-->
+<!--          	<div class="blog-entry align-self-stretch">-->
+<!--              <a href="blog-single.html" class="block-20" style="background-image: url('images/event-4.jpg');">-->
+<!--              </a>-->
+<!--              <div class="text p-4 d-block">-->
+<!--              	<div class="meta mb-3">-->
+<!--                  <div><a href="#">Sep. 10, 2018</a></div>-->
+<!--                  <div><a href="#">Admin</a></div>-->
+<!--                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>-->
+<!--                </div>-->
+<!--                <h3 class="heading mb-4"><a href="#">World Wide Donation</a></h3>-->
+<!--                <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="icon-map-o"></i> Venue Main Campus</span></p>-->
+<!--                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>-->
+<!--                <p><a href="event.html">Join Event <i class="ion-ios-arrow-forward"></i></a></p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col-md-4 d-flex ftco-animate">-->
+<!--          	<div class="blog-entry align-self-stretch">-->
+<!--              <a href="blog-single.html" class="block-20" style="background-image: url('images/event-5.jpg');">-->
+<!--              </a>-->
+<!--              <div class="text p-4 d-block">-->
+<!--              	<div class="meta mb-3">-->
+<!--                  <div><a href="#">Sep. 10, 2018</a></div>-->
+<!--                  <div><a href="#">Admin</a></div>-->
+<!--                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>-->
+<!--                </div>-->
+<!--                <h3 class="heading mb-4"><a href="#">World Wide Donation</a></h3>-->
+<!--                <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="icon-map-o"></i> Venue Main Campus</span></p>-->
+<!--                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>-->
+<!--                <p><a href="event.html">Join Event <i class="ion-ios-arrow-forward"></i></a></p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="col-md-4 d-flex ftco-animate">-->
+<!--          	<div class="blog-entry align-self-stretch">-->
+<!--              <a href="blog-single.html" class="block-20" style="background-image: url('images/event-6.jpg');">-->
+<!--              </a>-->
+<!--              <div class="text p-4 d-block">-->
+<!--              	<div class="meta mb-3">-->
+<!--                  <div><a href="#">Sep. 10, 2018</a></div>-->
+<!--                  <div><a href="#">Admin</a></div>-->
+<!--                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>-->
+<!--                </div>-->
+<!--                <h3 class="heading mb-4"><a href="#">World Wide Donation</a></h3>-->
+<!--                <p class="time-loc"><span class="mr-2"><i class="icon-clock-o"></i> 10:30AM-03:30PM</span> <span><i class="icon-map-o"></i> Venue Main Campus</span></p>-->
+<!--                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>-->
+<!--                <p><a href="event.html">Join Event <i class="ion-ios-arrow-forward"></i></a></p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="row mt-5">-->
+<!--          <div class="col text-center">-->
+<!--            <div class="block-27">-->
+<!--              <ul>-->
+<!--                <li><a href="#">&lt;</a></li>-->
+<!--                <li class="active"><span>1</span></li>-->
+<!--                <li><a href="#">2</a></li>-->
+<!--                <li><a href="#">3</a></li>-->
+<!--                <li><a href="#">4</a></li>-->
+<!--                <li><a href="#">5</a></li>-->
+<!--                <li><a href="#">&gt;</a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
+
+   <section class="ftco-section bg-light">
+       <div class="container">
+           <div class="row justify-content-center mb-5 pb-3">
+               <div class="col-md-7 heading-section ftco-animate text-center">
+                   <h2 class="mb-4">Our Events</h2>
+               </div>
+           </div>
+           <div class="row justify-content-center">
+               <div class="col-md-4 d-flex ftco-animate">
+                   <div class="blog-entry align-self-stretch">
+                       <div class="block-20" style="background-image: url({% static 'images/event-1.jpg' %});">
+                       </div>
+                       <div class="text p-4 d-block text-center">
+                           <div class="meta mb-3">
+                               <div><p>July 31, 2020</p></div>
+                               <div><a href='https://www.instagram.com/nawaazish.crew/'>Admin</a></div>
+                           </div>
+                           <h3 class="heading mb-4"><a href="#">Mission भोज</a></h3>
+                           <p>Nawaazish Crew's fundraising campaign Mission भोज(Feast)  is a mission to provide dry ration to the daily homeless, wage workers, migrant laborers and the financially poor.</p>
+                           <p><a href="{% url 'donate' %}" class="float-left">Donate Now <i class="ion-ios-arrow-forward"></i></a> <a href="#Event1_Modal" class="float-right" data-toggle="modal">View More <i class="ion-ios-arrow-forward"></i></a></p>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-md-4 d-flex ftco-animate">
+                   <div class="blog-entry align-self-stretch">
+                       <div class="block-20" style="background-image: url({% static 'images/Event/RHA/img1.jpg' %});">
+                       </div>
+                       <div class="text p-4 d-block text-center">
+                           <div class="meta mb-3">
+                               <div><p>July 31, 2020</p></div>
+                               <div><a href="{% static 'https://www.instagram.com/nawaazish.crew/' %}">Admin</a></div>
+                           </div>
+                           <h3 class="heading mb-4"><a >Action For Autism</a></h3>
+                           <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                           <p><a href="#Event2_Modal" data-toggle="modal"class="float-right">View More <i class="ion-ios-arrow-forward"></i></a></p>
+                       </div>
+                   </div>
+               </div>
+               <div class="col-md-4 d-flex ftco-animate">
+                   <div class="blog-entry align-self-stretch">
+                       <div class="block-20" style="background-image: url({% static 'images/Event/RHA/img7.jpg' %});">
+                       </div>
+                       <div class="text p-4 d-block text-center">
+                           <div class="meta mb-3">
+                               <div><p>July 31, 2020</p></div>
+                               <div><a href="{% static 'https://www.instagram.com/nawaazish.crew/' %}">Admin</a></div>
+                           </div>
+                           <h3 class="heading mb-4"><a>Robin Hood Army</a></h3>
+                           <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                           <p><a href="#Event3_Modal" data-toggle="modal" class="float-right">View More <i class="ion-ios-arrow-forward"></i></a></p>
+                       </div>
+                   </div>
+               </div>
+
+           </div>
+       </div>
+   </section>
+    <!--Footer-->
+
+    <footer class="ftco-footer ftco-section img">
+        {% include 'footer_nav.html' %}
+    	<!--<div class="overlay"></div>-->
+      <!--<div class="container">-->
+        <!--<div class="row mb-5">-->
+          <!--<div class="col-md-4">-->
+            <!--<div class="ftco-footer-widget mb-4">-->
+              <!--<h2 class="ftco-heading-2">About Us</h2>-->
+              <!--<p>We are Nawaazish crew - a group of college students from different realms of life, on a mission to contribute to a society of equal opportunities, an environment one and all.</p>-->
+              <!--<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">-->
+                <!--<li class="ftco-animate Social"><a href="{% static 'https://twitter.com/NawaazishCrew' %}" target="_blank"><span class="icon-twitter "></span></a></li>-->
+                <!--<li class="ftco-animate Social"><a href="{% static 'https://www.facebook.com/Nawaazish-Crew-107099397604923/' %}" target="_blank"><span class="icon-facebook "></span></a></li>-->
+                <!--<li class="ftco-animate Social"><a href="{% static 'https://www.instagram.com/nawaazish.crew/' %}" target="_blank"><span class="icon-instagram "></span></a></li>-->
+                <!--<li class="ftco-animate Social"><a href="{% static 'https://www.youtube.com/channel/UCRYRzx9eX4enktHapkhSy6Q' %}" target="_blank"><span class="icon-youtube "></span></a></li>-->
+                <!--<li class="ftco-animate Social"><a href="{% static 'https://www.linkedin.com/company/nawaazish-crew' %}" target="_blank"><span class="icon-linkedin"></span></a></li>-->
+              <!--</ul>-->
+            <!--</div>-->
+          <!--</div>-->
+          <!--&lt;!&ndash;<div class="col-md-4">-->
+            <!--<div class="ftco-footer-widget mb-4">-->
+              <!--<h2 class="ftco-heading-2">Recent Blog</h2>-->
+              <!--<div class="block-21 mb-4 d-flex">-->
+                <!--<a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>-->
+                <!--<div class="text">-->
+                  <!--<h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>-->
+                  <!--<div class="meta">-->
+                    <!--<div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>-->
+                    <!--<div><a href="#"><span class="icon-person"></span> Admin</a></div>-->
+                    <!--<div><a href="#"><span class="icon-chat"></span> 19</a></div>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+              <!--<div class="block-21 mb-4 d-flex">-->
+                <!--<a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>-->
+                <!--<div class="text">-->
+                  <!--<h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>-->
+                  <!--<div class="meta">-->
+                    <!--<div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>-->
+                    <!--<div><a href="#"><span class="icon-person"></span> Admin</a></div>-->
+                    <!--<div><a href="#"><span class="icon-chat"></span> 19</a></div>-->
+                  <!--</div>-->
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>&ndash;&gt;-->
+          <!--<div class="col-md-4">-->
+             <!--<div class="ftco-footer-widget mb-4 ml-md-4">-->
+              <!--<h2 class="ftco-heading-2">Site Links</h2>-->
+              <!--<ul class="list-unstyled">-->
+                <!--<li><a href="{% url 'join_us' %}" class="py-2 d-block">Home</a></li>-->
+                <!--<li><a href="{% url 'about' %}" class="py-2 d-block">About</a></li>-->
+                <!--<li><a href="{% url 'donate' %}" class="py-2 d-block">Donate</a></li>-->
+                <!--<li><a href="{% url 'event' %}" class="py-2 d-block">Events</a></li>-->
+                <!--<li><a href="{% url 'crew' %}" class="py-2 d-block">Meet The Crew</a></li>-->
+               <!--&lt;!&ndash; <li><a href="blog.html" class="py-2 d-block">Blog</a></li>&ndash;&gt;-->
+               <!--</ul>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-md-4">-->
+        <!--<div class="ftco-footer-widget mb-4">-->
+          <!--<h2 class="ftco-heading-2">Contact Us</h2>-->
+          <!--<div class="block-23 mb-3">-->
+            <!--<ul>-->
+              <!--<li><a href="{% static 'tel://+91-8800202773' %}"><span class="icon icon-phone"></span><span class="text">+91-8800202773</span></a></li>-->
+              <!--<li><a href="{% static 'mailto:nawaazishcrew@gmail.com' %}"><span class="icon icon-envelope"></span><span class="text">nawaazish.crew@gmail.com</span></a></li>-->
+            <!--</ul>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row">-->
+      <!--<div class="col-md-12 text-center">-->
+       <!--<p>Copyright <script>document.write(new Date().getFullYear())</script> All rights reserved | <a href="#" target="_blank">Nawaazish</a>-->
+       <!--</p>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+</footer>
+
+    <!--Modal-->
+    <!--<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">-->
+        <div class="modal" tabindex="-1" role="dialog" id="Event1_Modal">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Mission भोज</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Due to the complete COVID-lockdown across the country, daily wage workers are left with no work & scarce government support.
+                            The ones who are the only earning member of the family are affected the most.</p>
+
+                        <p>Things ahead seem to be getting worse, as the lockdown has left some wrecking after-effects on the daily wage sector.</p>
+
+                        <p>However, our Nawaazish Crew, a non-profit organization based in Delhi, is on a mission  help the needy, using an iterative model: 📈
+                            <br />
+                            1. Our organization procures supplies from wholesalers at a cheaper rate.
+                            <br />
+                            2. We then hand-over the ration to our ground delivery partners.
+                            <br />
+                            3. Our delivery partners pick up the packets from the wholesaler and provide ration to the ones in need.</p>
+
+
+                        <p>What will the ration packet consist of?
+                            <br />
+                            The list includes, but isn't limited to:
+                            <br />
+                            1. Atta
+                            <br />
+                            2. Chawal
+                            <br />
+                            3. Channa dal</p>
+
+                        <p>Each pack is procured at a cost ranging between ₹450 & ₹500/-</p>
+
+                        <p>A contribution of ₹500 would provide a family of 4 with 7kg Atta, 7kg Rice, & 3.5kg Daal that usually lasts for 14 days.</p>
+
+
+                        <p>To most of us, ₹500 might seem like a trivial amount, but it holds the power of feeding a family in need, & in uniting us as human beings. 🌠</p>
+
+                        <p><a href="{% url 'donate' %}"><strong>DONATE NOW<strong></a></p>
+                        <p>Information : </p>
+
+                        <p>All donors get an appreciation card for their contributions. 🌸</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--</div>-->
+
+
+<!--    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">-->
+        <div class="modal" tabindex="-1" role="dialog" id="Event2_Modal">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Action For Autism</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--    </div>-->`
+
+<!--    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">-->
+        <div class="modal" tabindex="-1" role="dialog" id="Event3_Modal">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Robin Hood Army</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--    </div>-->
+  <!-- loader -->
+ <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#fff"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#079b78"/></svg></div>
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+  </body>
+</html>
